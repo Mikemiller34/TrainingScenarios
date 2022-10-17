@@ -1,0 +1,48 @@
+**Title: Purview Training**
+
+**Client Overview**
+
+Contoso Global, a healthcare organization with 65,000 employees and 55,000 endpoints, is currently in the process of implementing the Microsoft 365 E5 suite of Security and Compliance tools. Contoso Global recently transitioned their identities, endpoints, and most of their data to the Microsoft cloud and are now looking to leverage the security benefits available to them. The legal team currently feels the greatest risk lies within their sensitive data as they currently handle many different types of personal and health information for their clients. They are seeking a Microsoft partner to help them implement Microsoft Purview Information Protection to begin discovering and classifying the sensitive data within their organization. 
+
+**Client Environment**
+
+Users: 65,000
+License: Microsoft 365 E5
+Endpoints: 55,000
+    40,000 Windows 10 21H2
+    5,000 Windows 11
+    8,000 Auto-login devices
+    2,000 Windows 10 1803 & older (Down-level)
+Data repositories:
+    SharePoint Online
+    SharePoint On-premises (SharePoint 2016)
+    OneDrive Online
+    Microsoft Teams
+
+**Client Needs**
+
+Leverage Microsoft Intune to onboard endpoints to Microsoft Defender for Endpoint
+Enable onboarding in Microsoft Purview
+Enable sensitivity labels for Groups and Sites
+Data Classification:
+    Start with OOTB SITs
+    To start, users should be manually applying labels, with a recommendation for Highly Confidential. Confidential should be used for any file containing a Credit Card number. Any file that has a Social Security number should be Highly Confidential. We would like for a user to receive a recommendation if a SSN is detected.
+    3 Sensitivity labels
+        General - No Protections/Restrictions, default label, Green color
+        Confidential - Orange label color
+            Internal
+                All internal employees need reviewer
+                Adele Vance, Alex Wilber, and Megan Bowen need Co-Author
+            External
+                All internal employees need reviewer
+                Adele Vance, Alex Wilber, and Megan Bowen need Co-Author
+                Any authenticated user needs viewer access
+        Highly Confidential - Red label Color, all files should have a "Highly Confidential" Watermark
+            Internal
+                Specific Users, Adele Vance and Alex Wilber need Co-Author, Megan Bowen needs Viewer. Make sure an Admin account has access.
+            External
+                Same Specific Users as "Internal", Specific Domains (Collaborate with a co-worker and add their lab tenant domain) - Viewer access
+
+Data Loss Prevention:
+    Endpoint DLP
+        If a file has the Highly Confidential Label, it should not be printed, moved to a USB, added to a network share, and the contents should not be copied to a clipboard.
